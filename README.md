@@ -1,6 +1,6 @@
 # Github-Trending
 
-每日追踪 Github 热们项目。
+每日追踪 Github 热门项目。
 
 ## 使用
 
