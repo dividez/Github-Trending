@@ -2,7 +2,10 @@ name: Daily Github-Trending  # 工作流程的名称为 Daily Github-Trending
 
 on:
   schedule:
-    - cron: "0 10 * * *"  # 每天10点触发
+    - cron: "0 10 * * *"  # 每天10点触发# 在针对 `main` 分支的推送上运行。
+  push:
+    branches: [main]
+
 
 jobs:
   build:
