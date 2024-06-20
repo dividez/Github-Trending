@@ -3,8 +3,8 @@ name: Daily Github-Trending  # 工作流程的名称为 Daily Github-Trending
 on:
   schedule:
     - cron: "0 10 * * *"  # 每天10点触发# 在针对 `main` 分支的推送上运行。
-  # push:
-  #   branches: [main]
+  push:
+    branches: [main]
 
 
 jobs:
@@ -32,8 +32,8 @@ jobs:
     - name: push to origin master  # 推送到远程仓库的 master 分支
       run: |  # 执行多行命令
         echo "start push"  # 输出提示信息
-        git config --global user.name "dividez"  # 配置全局用户名
-        git config --global user.email "divide_z@163.com"  # 配置全局邮箱
+        git config --global user.name "Jim"  # 配置全局用户名
+        git config --global user.email "dividi_z@163.com"  # 配置全局邮箱
 
         git add markdowns/*.md  # 添加 markdowns 文件夹下的所有 .md 文件
         git commit -m $(date '+%Y-%m-%d')  # 提交并添加日期作为提交信息
