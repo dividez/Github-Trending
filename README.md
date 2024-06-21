@@ -17,4 +17,4 @@ go run main.go
 ## 参考
 
 - javascript：[vitalets/github-trending-repos](https://github.com/vitalets/github-trending-repos)
-- github-hot: [github-hot](https://raw.githubusercontent.com/shibing624/github-hot)
+- github-hot: [github-hot](https://github.com/shibing624/github-hot)
