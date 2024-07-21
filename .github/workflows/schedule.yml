@@ -3,8 +3,8 @@ name: Daily Github-Trending  # 工作流程的名称为 Daily Github-Trending
 on:
   schedule:
     - cron: '0 1 * * *'  # 每天触发  在UTC时间（+8为北京时间）每天执行
-  # push:
-  #   branches: [main]
+  push:
+    branches: [main]
 
 
 jobs:
@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest  # 在最新版的Ubuntu系统上运行
 
     steps:
-    - uses: actions/checkout@v2  # 使用GitHub提供的操作，检出仓库内容
+    - uses: actions/checkout@v4  # 使用GitHub提供的操作，检出仓库内容
 
     - name: Set up Go 1.22  # 设置Go 1.22环境
-      uses: actions/setup-go@v2
+      uses: actions/setup-go@v5
       with:
         go-version: 1.22  # 使用Go 1.22版本
 
