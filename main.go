@@ -110,6 +110,7 @@ func job() {
 	scrape("python", filename, 5)
 	scrape("java", filename, 5)
 	scrape("javascript", filename, 5)
+	scrape("typescript", filename, 5)
 	scrape("go", filename, 5)
 
 	fmt.Printf("save markdown file to %s\n", filename)
