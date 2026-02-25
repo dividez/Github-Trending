@@ -8,6 +8,7 @@ import (
 	"os/exec"
 	"strings"
 	"time"
+	"path/filepath"
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/go-resty/resty/v2" // 确保此行存在
@@ -101,8 +102,23 @@ func saveToMd(ds [][]string, filename, language string, topk int) {
 
 func job() {
 
-	todayStr := time.Now().Format("2006-01-02")
-	filename := fmt.Sprintf("markdowns/%s.md", todayStr)
+	now := time.Now()
+
+	year := now.Format("2006")
+	month := now.Format("01")
+	todayStr := now.Format("2006-01-02")
+
+	// 构造目录路径：markdowns/年/月
+	dirPath := filepath.Join("markdowns", year, month)
+
+	// 确保目录存在
+	if err := os.MkdirAll(dirPath, os.ModePerm); err != nil {
+		fmt.Println("create dir failed:", err)
+		return
+	}
+
+	// 构造最终文件路径
+	filename := filepath.Join(dirPath, todayStr+".md")
 
 	createMarkdown(todayStr, filename)
 
