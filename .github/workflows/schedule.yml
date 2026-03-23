@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest  # 在最新版的Ubuntu系统上运行
 
     steps:
-    - uses: actions/checkout@v4  # 使用GitHub提供的操作，检出仓库内容
+    - uses: actions/checkout@v5  # 使用GitHub提供的操作，检出仓库内容
 
     - name: Set up Go 1.22  # 设置Go 1.22环境
-      uses: actions/setup-go@v5
+      uses: actions/setup-go@v6
       with:
         go-version: 1.22  # 使用Go 1.22版本
 
